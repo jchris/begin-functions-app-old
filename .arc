@@ -1,10 +1,8 @@
-#
-# Warning! Do Not Edit
-# --------------------
-# This is a generated file and will be overwritten
-#
 @app
-test-app
+refuge-t4a
 
 @html
 get /
+
+@js
+/query
