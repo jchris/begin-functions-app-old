@@ -16,6 +16,6 @@
     "tiny-json-http": "latest"
   },
   "devDependencies": {
-    "aws-sdk": "^2.256.1"
+    "aws-sdk": "^2.291.0"
   }
 }

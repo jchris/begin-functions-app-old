@@ -11,7 +11,7 @@ function route(req, res) {
   // TODO change defaultJS
   let defaultJS = `console.log('Hello frontend! ', ${request})`
 
-  return client.query("Hello FaunaDB").then((result)=> {
+  client.query("Hello FaunaDB").then((result)=> {
     console.log('Hello backend! ', request)
     res({
       js: defaultJS,
