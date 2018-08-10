@@ -1,0 +1,7 @@
+{
+  "name": "refuge-t4a-get-index",
+  "dependencies": {
+    "@architect/functions": "latest",
+    "@begin-functions/data": "latest"
+  }
+}
