@@ -13,7 +13,7 @@ let defaultHTML = `
 
     <h1 class="center-text">
       <!-- ↓ Change "Hello world!" to something else and head on back to Begin! -->
-      Hello Fauna!
+      Hello FaunaDB!
     </h1>
 
     <p class="center-text">
@@ -26,6 +26,10 @@ let defaultHTML = `
 
 function route(req, res) {
   console.log(JSON.stringify(req, null, 2))
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener("load", reqListener);
+  oReq.open("GET", "/query");
+  oReq.send();
   res({
     html: defaultHTML
   })
