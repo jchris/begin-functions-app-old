@@ -23,13 +23,15 @@ let defaultHTML = `
   </body>
 </html>
 `
-
+/*global XMLHttpRequest*/
 function route(req, res) {
   console.log(JSON.stringify(req, null, 2))
-  var oReq = new XMLHttpRequest();
-  oReq.addEventListener("load", reqListener);
-  oReq.open("GET", "/query");
-  oReq.send();
+  var oReq = new XMLHttpRequest()
+  oReq.addEventListener("load", (resp) => {
+    console.log("resp",resp)
+  })
+  oReq.open("GET", "/query")
+  oReq.send()
   res({
     html: defaultHTML
   })
