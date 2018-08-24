@@ -13,7 +13,7 @@ let defaultHTML = `
 
     <h1 class="center-text">
       <!-- ↓ Change "Hello world!" to something else and head on back to Begin! -->
-      Hello FaunaDB!
+      Hello Fauna! Rad1
     </h1>
 
     <p class="center-text">
@@ -23,27 +23,12 @@ let defaultHTML = `
   </body>
 </html>
 `
-/*global window, XMLHttpRequest */
-function getQuery(res) {
-  console.log(JSON.stringify(res, null, 2))
-  var oReq = new XMLHttpRequest()
-  oReq.addEventListener("load", (resp) => {
-    console.log("resp", resp)
-    res(resp)
-  })
-  oReq.open("GET", "/query")
-  oReq.send()
-}
-
-if (typeof window != "undefined") {
-  window.getQuery = getQuery
-}
 
 function route(req, res) {
-   console.log(JSON.stringify(req, null, 2))
-   res({
-     html: defaultHTML
-   })
- }
+  console.log(JSON.stringify(req, null, 2))
+  res({
+    html: defaultHTML
+  })
+}
 
 exports.handler = begin.html.get(route)
