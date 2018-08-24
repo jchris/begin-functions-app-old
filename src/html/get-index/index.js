@@ -24,7 +24,7 @@ let defaultHTML = `
 </html>
 `
 /*global window, XMLHttpRequest */
-window.getQuery = function getQuery(res) {
+function getQuery(res) {
   console.log(JSON.stringify(res, null, 2))
   var oReq = new XMLHttpRequest()
   oReq.addEventListener("load", (resp) => {
@@ -33,6 +33,10 @@ window.getQuery = function getQuery(res) {
   })
   oReq.open("GET", "/query")
   oReq.send()
+}
+
+if (typeof window != "undefined") {
+  window.getQuery = getQuery
 }
 
 function route(req, res) {
